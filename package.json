@@ -4,12 +4,13 @@
   "description": "single page application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "start": "webpack serve --open --mode development --env development"
   },
   "keywords": [
     "javascript"
   ],
-  "author": "",
+  "author": "Kary Ruiz",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.0",
