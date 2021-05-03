@@ -1,4 +1,4 @@
-language: generic
+language: node_js
 cache:
   directories:
     ~/.npm
@@ -11,7 +11,6 @@ cache:
   deploy:
     provider: pages
     edge: true
-    skip-cleanup: true
     keep-history: true
     github-token: $GITHUB_TOKEN
     local-dir: dist/
