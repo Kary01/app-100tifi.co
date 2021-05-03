@@ -1,15 +1,20 @@
 language: node_js
-node_js:
-  - "stable"
 cache:
   directories:
-  - node_modules
-script:
-  - npm run build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: build
-  on:
-    branch: main
+    ~/.npm
+    node_js
+    - "stable"
+  git:
+    depth: 3
+  script:
+    - npm run build
+  deploy:
+    provider: pages
+    edge: true
+    keep-history: true
+    github-token: $GITHUB_TOKEN
+    local-dir: dist/
+    target-branch: gh-pages
+    commit_message: "Deploy Release"
+    on:
+      branch: main
